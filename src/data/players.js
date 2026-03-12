@@ -16,4 +16,5 @@ export const players = [
   { id: 'siri',   name: 'Siri',   image: 'siri.png'   },
   { id: 'sofi',   name: 'Sofi',   image: 'sofi.png'   },
   { id: 'volpa',  name: 'Volpa',  image: 'volpa.png'  },
+  { id: 'fede',  name: 'Fede',  image: 'fede.png'  },
 ];
