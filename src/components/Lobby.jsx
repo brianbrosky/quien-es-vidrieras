@@ -1,5 +1,10 @@
-import { startGame } from '../utils/gameManager';
+import { startGame, resetGame } from '../utils/gameManager';
 import { players as teamPlayers } from '../data/players';
+
+async function handleReset() {
+  await resetGame();
+  window.location.reload();
+}
 
 export default function Lobby({ gameDoc, players, isHost, localPlayerId }) {
   // Solo mostrar jugadores que se unieron DESPUÉS de que se creó esta sesión de juego
@@ -36,13 +41,18 @@ export default function Lobby({ gameDoc, players, isHost, localPlayerId }) {
         </p>
 
         {isHost ? (
-          <button
-            className="btn-primary"
-            onClick={() => startGame(localPlayerId)}
-            disabled={onlinePlayers.length < 2}
-          >
-            {onlinePlayers.length < 2 ? 'Esperando jugadores...' : '¡Empezar!'}
-          </button>
+          <>
+            <button
+              className="btn-primary"
+              onClick={() => startGame(localPlayerId)}
+              disabled={onlinePlayers.length < 2}
+            >
+              {onlinePlayers.length < 2 ? 'Esperando jugadores...' : '¡Empezar!'}
+            </button>
+            <button className="btn-reset" onClick={handleReset}>
+              Reiniciar partida
+            </button>
+          </>
         ) : (
           <p className="waiting-msg">Esperando que el host inicie el juego...</p>
         )}

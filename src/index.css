@@ -98,6 +98,8 @@ input[type="text"]::placeholder { color: var(--text-muted); }
 .host-badge { background: var(--primary); color: #1a0533; font-size: .65rem; font-weight: 700; border-radius: .4rem; padding: .1rem .4rem; margin-left: .5rem; }
 .rounds-info { font-size: .85rem; color: var(--text-muted); }
 .waiting-msg { color: var(--text-muted); font-size: .9rem; }
+.btn-reset { background: none; border: 1px solid rgba(255,255,255,.15); border-radius: .75rem; padding: .5rem 1rem; color: var(--text-muted); font-size: .85rem; cursor: pointer; width: 100%; transition: border-color .2s, color .2s; }
+.btn-reset:hover { border-color: var(--wrong); color: var(--wrong); }
 
 /* ── Game Round ─────────────────────────────────────────────── */
 .game-round { gap: 1.25rem; }
